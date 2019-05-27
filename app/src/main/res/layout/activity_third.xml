@@ -280,7 +280,7 @@
                 android:weightSum="2">
 
                 <ImageButton
-                    android:id="@+id/fab11"
+                    android:id="@+id/main_colors_game"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_margin="10dp"
