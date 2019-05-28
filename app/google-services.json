@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1027203643635",
+    "firebase_url": "https://egovernment-dda1e.firebaseio.com",
+    "project_id": "egovernment-dda1e",
+    "storage_bucket": "egovernment-dda1e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1027203643635:android:3fcd4247406cd256",
+        "android_client_info": {
+          "package_name": "com.example.egovernment"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1027203643635-dbhu6aj1o0v5g993b5f8l1ap8s3d2k46.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.egovernment",
+            "certificate_hash": "eabaec2e4ed9252f4855b3e344384e1d3b042a69"
+          }
+        },
+        {
+          "client_id": "1027203643635-h3js92efb2ap5eqojqbqpt43b6r8h94g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOIIJbnhj-I8m9FffN_LNK4kMR_wLX5hE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1027203643635-h3js92efb2ap5eqojqbqpt43b6r8h94g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
