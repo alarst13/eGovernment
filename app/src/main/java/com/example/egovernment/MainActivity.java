@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     EditText phone_number_edt;
     public static final String MyPREFERENCES = "MyPrefs";
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
