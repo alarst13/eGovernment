@@ -45,7 +45,10 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String phoneNumber;
                 phoneNumber = phone_number_edt.getText().toString();
-                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                PreferenceData.setUserLoggedInStatus(getApplicationContext(), true);
+                PreferenceData.setLoggedInUserPhoneNumber(getApplicationContext(), phoneNumber);
+                Intent intent = new Intent(MainActivity.this, ThirdActivity.class);
+//                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
                 intent.putExtra("number", phoneNumber);
                 startActivity(intent);
             }
