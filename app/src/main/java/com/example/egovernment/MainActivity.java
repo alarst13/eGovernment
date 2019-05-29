@@ -14,6 +14,7 @@ import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
+
     Button submit_btn;
     EditText phone_number_edt;
     public static final String MyPREFERENCES = "MyPrefs";
