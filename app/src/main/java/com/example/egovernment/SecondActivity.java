@@ -90,7 +90,7 @@ public class SecondActivity extends AppCompatActivity {
 
     //the method is sending verification code
     //the country id is concatenated
-    //you can take the country id as user input as well
+    //you can take the country id as User input as well
     private void sendVerificationCode(String mobile) {
         PhoneAuthProvider.getInstance().verifyPhoneNumber(
                 "+98" + mobile,
@@ -110,7 +110,7 @@ public class SecondActivity extends AppCompatActivity {
 
             //sometime the code is not detected automatically
             //in this case the code will be null
-            //so user has to manually enter the code
+            //so User has to manually enter the code
             if (code != null) {
                 verification_code_edt.setText(code);
                 //verifying the code
@@ -127,7 +127,7 @@ public class SecondActivity extends AppCompatActivity {
         public void onCodeSent(String s, PhoneAuthProvider.ForceResendingToken forceResendingToken) {
             super.onCodeSent(s, forceResendingToken);
 
-            //storing the verification id that is sent to the user
+            //storing the verification id that is sent to the User
             mVerificationId = s;
         }
     };
@@ -136,7 +136,7 @@ public class SecondActivity extends AppCompatActivity {
         //creating the credential
         PhoneAuthCredential credential = PhoneAuthProvider.getCredential(mVerificationId, code);
 
-        //signing the user
+        //signing the User
         signInWithPhoneAuthCredential(credential);
     }
 

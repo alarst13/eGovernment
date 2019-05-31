@@ -1,16 +1,21 @@
 package com.example.egovernment;
 
+import android.content.ContentValues;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.example.egovernment.Controllers.UsersController;
+import com.example.egovernment.model.User;
+import com.facebook.stetho.Stetho;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,11 +23,11 @@ public class MainActivity extends AppCompatActivity {
     EditText phone_number_edt;
     public static final String MyPREFERENCES = "MyPrefs";
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Stetho.initializeWithDefaults(this);
 
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#ffb2b2")));
 
@@ -36,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         submit_btn = findViewById(R.id.phone_number_btn_main_activity);
         phone_number_edt = findViewById(R.id.phone_number_edt_main_activity);
 
-        if (PreferenceData.getUserLoggedInStatus(getApplicationContext()) == true) {
+        if (PreferenceData.getUserLoggedInStatus(getApplicationContext())) {
             Intent intent = new Intent(MainActivity.this, ThirdActivity.class);
             startActivityForResult(intent,888);
         }
@@ -49,8 +54,13 @@ public class MainActivity extends AppCompatActivity {
                 PreferenceData.setUserLoggedInStatus(getApplicationContext(), true);
                 PreferenceData.setLoggedInUserPhoneNumber(getApplicationContext(), phoneNumber);
                 Intent intent = new Intent(MainActivity.this, ThirdActivity.class);
+                DatabaseHelper databaseHelper = new DatabaseHelper(getApplicationContext());
+                User user = new User(phoneNumber);
+                if(UsersController.isPhoneNumberUnique(user)){
+                    databaseHelper.addToDataBase(user);
+                }
 //                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-                intent.putExtra("number", phoneNumber);
+//                intent.putExtra("number", phoneNumber);
                 startActivity(intent);
             }
         });
