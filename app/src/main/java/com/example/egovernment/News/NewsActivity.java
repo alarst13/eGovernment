@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 
+import com.example.egovernment.Message;
 import com.example.egovernment.R;
 
 import java.util.LinkedList;
