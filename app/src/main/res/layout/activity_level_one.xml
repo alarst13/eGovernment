@@ -1,106 +1,144 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ColorsGame.LevelOneActivity"
-    android:orientation="vertical">
-    <TextView
-        android:id="@+id/color_game_one_point"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="your point"
-        tools:ignore="MissingConstraints" />
+    android:orientation="vertical"
+    tools:context=".ColorsGame.LevelOneActivity">
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints"
-        android:weightSum="3">
-        <ImageButton
-            android:tag="1"
-            android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/color_game_one_point"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:clickable="true"
-            android:onClick="game"
-            tools:ignore="OnClick"
-            android:background="#000000"/>
-        <ImageButton
-            android:tag="2"
-            android:layout_width="wrap_content"
+            android:text="your point"
+            tools:ignore="MissingConstraints" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:clickable="true"
-            android:onClick="game"
-            tools:ignore="OnClick"
-            android:background="#000000"/>
-        <ImageButton
-            android:tag="3"
-            android:layout_width="wrap_content"
+            android:weightSum="3"
+            tools:ignore="MissingConstraints"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/color_game_one_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#000000"
+                android:clickable="true"
+                android:onClick="game"
+                android:tag="1"
+                tools:ignore="OnClick"
+                android:layout_marginRight="5dp"
+                />
+
+            <Button
+                android:id="@+id/color_game_one_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#000000"
+                android:clickable="true"
+                android:onClick="game"
+                android:tag="2"
+                tools:ignore="OnClick"
+                android:layout_marginRight="5dp"/>
+
+            <Button
+                android:id="@+id/color_game_one_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#000000"
+                android:clickable="true"
+                android:onClick="game"
+                android:tag="3"
+                tools:ignore="OnClick" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:clickable="true"
-            android:onClick="game"
-            tools:ignore="OnClick"
-            android:background="#000000"/>
+            android:weightSum="3"
+            tools:ignore="MissingConstraints"
+            android:layout_marginTop="5dp">
+
+            <Button
+                android:id="@+id/color_game_one_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#000000"
+                android:clickable="true"
+                android:onClick="game"
+                android:tag="4"
+                tools:ignore="OnClick"
+                android:layout_marginRight="5dp"/>
+
+            <Button
+                android:id="@+id/color_game_one_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#000000"
+                android:clickable="true"
+                android:onClick="game"
+                android:tag="5"
+                tools:ignore="OnClick"
+                android:layout_marginRight="5dp"/>
+
+            <Button
+                android:id="@+id/color_game_one_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#000000"
+                android:clickable="true"
+                android:onClick="game"
+                android:tag="6"
+                tools:ignore="OnClick" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="3"
+            tools:ignore="MissingConstraints"
+            android:layout_marginTop="5dp">
+
+            <Button
+                android:id="@+id/color_game_one_7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#000000"
+                android:clickable="true"
+                android:onClick="game"
+                android:tag="7"
+                tools:ignore="OnClick"
+                android:layout_marginRight="5dp"/>
+
+            <Button
+                android:id="@+id/color_game_one_8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#000000"
+                android:clickable="true"
+                android:onClick="game"
+                android:tag="8"
+                tools:ignore="OnClick"
+                android:layout_marginRight="5dp"/>
+
+            <Button
+                android:id="@+id/color_game_one_9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#000000"
+                android:clickable="true"
+                android:onClick="game"
+                android:tag="9"
+                tools:ignore="DuplicateIds,OnClick" />
+        </LinearLayout>
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints"
-        android:weightSum="3">
-        <ImageButton
-            android:tag="4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:clickable="true"
-            android:onClick="game"
-            tools:ignore="OnClick"
-            android:background="#000000"/>
-        <ImageButton
-            android:tag="5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:clickable="true"
-            android:onClick="game"
-            tools:ignore="OnClick"
-            android:background="#000000"/>
-        <ImageButton
-            android:tag="6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:clickable="true"
-            android:onClick="game"
-            tools:ignore="OnClick"
-            android:background="#000000"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints"
-        android:weightSum="3">
-        <ImageButton
-            android:tag="7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:clickable="true"
-            android:onClick="game"
-            tools:ignore="OnClick"
-            android:background="#000000"/>
-        <ImageButton
-            android:tag="8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:clickable="true"
-            android:onClick="game"
-            tools:ignore="OnClick"
-            android:background="#000000"/>
-        <ImageButton
-            android:tag="9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:clickable="true"
-            android:onClick="game"
-            tools:ignore="OnClick"
-            android:background="#000000"/>
-    </LinearLayout>
-</LinearLayout>
+
+</RelativeLayout>

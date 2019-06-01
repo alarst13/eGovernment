@@ -21,6 +21,16 @@ public class LevelOneActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level_one);
+        buttons[0] = findViewById(R.id.color_game_one_1);
+        buttons[1] = findViewById(R.id.color_game_one_2);
+        buttons[2] = findViewById(R.id.color_game_one_3);
+        buttons[3] = findViewById(R.id.color_game_one_4);
+        buttons[4] = findViewById(R.id.color_game_one_5);
+        buttons[5] = findViewById(R.id.color_game_one_6);
+        buttons[6] = findViewById(R.id.color_game_one_7);
+        buttons[7] = findViewById(R.id.color_game_one_8);
+        buttons[8] = findViewById(R.id.color_game_one_9);
+
     }
 
     public void setColor() {

@@ -12,10 +12,11 @@ import android.view.WindowManager;
 import android.widget.ImageButton;
 
 import com.example.egovernment.ColorsGame.ColorsGameActivity;
+import com.example.egovernment.News.NewsActivity;
 
 public class ThirdActivity extends AppCompatActivity {
 
-    ImageButton colorsGame;
+    ImageButton colorsGame , news;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +36,14 @@ public class ThirdActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(ThirdActivity.this , ColorsGameActivity.class));
+            }
+        });
+
+        news = findViewById(R.id.main_news);
+        news.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ThirdActivity.this , NewsActivity.class));
             }
         });
     }
