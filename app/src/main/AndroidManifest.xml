@@ -11,11 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".News.NewsActivity"></activity>
+        <activity android:name=".ColorsGame.LevelOneActivity"></activity>
+        <activity android:name=".ColorsGame.ColorsGameActivity"></activity>
         <activity android:name=".Dictionary.DictionaryActivity"></activity>
         <activity android:name=".QuizOfKings.QuizOfKingsActivity" />
         <activity android:name=".SecondActivity" />
         <activity android:name=".Library.LibraryActivity"></activity>
-        <activity android:name=".ThirdActivity" />
+        <activity android:name=".ThirdActivity"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
