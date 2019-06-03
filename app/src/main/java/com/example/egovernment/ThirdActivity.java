@@ -17,7 +17,7 @@ import com.example.egovernment.News.NewsActivity;
 
 public class ThirdActivity extends AppCompatActivity {
 
-    ImageButton colorsGame, library, news;
+    ImageButton colorsGame, library, news, card_to_card, age_detection;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +52,20 @@ public class ThirdActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(ThirdActivity.this, LibraryActivity.class));
+            }
+        });
+        card_to_card = findViewById(R.id.fab2);
+        card_to_card.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ThirdActivity.this, CardToCardActivity.class));
+            }
+        });
+        age_detection = findViewById(R.id.fab7);
+        age_detection.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ThirdActivity.this, AgeDetectionActivity.class));
             }
         });
     }
