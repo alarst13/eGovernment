@@ -10,6 +10,7 @@ public class QuizOfKings {
     LinkedList <String> answer4;
     LinkedList <String> answer;
 
+
     public QuizOfKings() {
         //get from data base
         questions = new LinkedList<>();
