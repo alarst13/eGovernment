@@ -257,7 +257,7 @@
                 android:weightSum="2">
 
                 <ImageButton
-                    android:id="@+id/fab10"
+                    android:id="@+id/main_quiz"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_margin="10dp"
