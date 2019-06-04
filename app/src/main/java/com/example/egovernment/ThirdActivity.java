@@ -12,13 +12,14 @@ import android.view.WindowManager;
 import android.widget.ImageButton;
 
 import com.example.egovernment.ColorsGame.ColorsGameActivity;
+import com.example.egovernment.Dictionary.DictionaryActivity;
 import com.example.egovernment.Library.LibraryActivity;
 import com.example.egovernment.News.NewsActivity;
 import com.example.egovernment.QuizOfKings.QuizOfKingsActivity;
 
 public class ThirdActivity extends AppCompatActivity {
 
-    ImageButton colorsGame, library, news , quizOfKing;
+    ImageButton colorsGame, library, news , quizOfKing , dictionary;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +49,7 @@ public class ThirdActivity extends AppCompatActivity {
                 startActivity(new Intent(ThirdActivity.this , NewsActivity.class));
             }
         });
+
         library = findViewById(R.id.fab1);
         library.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,6 +63,14 @@ public class ThirdActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(ThirdActivity.this , QuizOfKingsActivity.class));
+            }
+        });
+
+        dictionary = findViewById(R.id.main_dictionary);
+        dictionary.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ThirdActivity.this , DictionaryActivity.class));
             }
         });
     }

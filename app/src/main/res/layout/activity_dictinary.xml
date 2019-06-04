@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Dictionary.DictionaryActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/pink_background">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -14,7 +15,8 @@
             android:id="@+id/dictionary_search_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="search"/>
+            android:text="search"
+            android:background="#c52b0d"/>
         <EditText
             android:id="@+id/dictionary_search_text"
             android:layout_width="wrap_content"
@@ -22,6 +24,10 @@
             android:hint="search"
             android:textSize="20dp"/>
     </LinearLayout>
+    <TextView
+        android:id="@+id/dictionary_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
     <ListView
         android:id="@+id/dictionary_list"
         android:layout_width="match_parent"
