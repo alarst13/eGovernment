@@ -3,6 +3,11 @@
     package="com.example.egovernment">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -11,6 +16,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".CardToCardActivity"></activity>
+        <activity android:name=".AgeDetectionActivity"></activity>
         <activity android:name=".News.NewsActivity"></activity>
         <activity android:name=".ColorsGame.LevelOneActivity"></activity>
         <activity android:name=".ColorsGame.ColorsGameActivity"></activity>
