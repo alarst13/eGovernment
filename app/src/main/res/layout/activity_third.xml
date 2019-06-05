@@ -77,7 +77,7 @@
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_margin="10dp"
-                    android:background="@drawable/ic_goods"/>
+                    android:background="@drawable/ic_employee"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -85,7 +85,7 @@
                     android:layout_gravity="center"
                     android:fontFamily="cursive"
                     android:textStyle="bold"
-                    android:text="mSale"/>
+                    android:text="Account Turnover"/>
             </LinearLayout>
         </LinearLayout>
 

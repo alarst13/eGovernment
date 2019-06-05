@@ -56,6 +56,9 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, ThirdActivity.class);
                 DatabaseHelper databaseHelper = new DatabaseHelper(getApplicationContext());
                 User user = new User(phoneNumber);
+                try{
+                    databaseHelper.refreshList();
+                }catch (Exception e){}
                 if(UsersController.isPhoneNumberUnique(user)){
                     databaseHelper.addToDataBase(user);
                 }

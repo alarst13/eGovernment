@@ -1,6 +1,5 @@
-package com.example.egovernment;
+package com.example.egovernment.AccountTurnover;
 
-import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
@@ -9,23 +8,23 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
-import android.widget.EditText;
+import android.widget.ListView;
 
-public class CardToCardActivity extends AppCompatActivity {
+import com.example.egovernment.R;
 
-    Button submit_transfer;
-    EditText from_card_edt, to_card_edt, amount_edt, password_edt;
+public class AccountTurnover extends AppCompatActivity {
+
+    ListView account_turnover_list_view;
+    AccountAdapter accountAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_card_to_card);
+        setContentView(R.layout.activity_account_turnover);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#ffb2b2")));
-        getSupportActionBar().setTitle("Card Transfer");
+        getSupportActionBar().setTitle("Bank Account Turnover");
 
         if (Build.VERSION.SDK_INT >= 21) {
             Window window = this.getWindow();
@@ -34,21 +33,14 @@ public class CardToCardActivity extends AppCompatActivity {
             window.setStatusBarColor(this.getResources().getColor(R.color.red));
         }
 
-        submit_transfer = findViewById(R.id.submit_transfer);
-        from_card_edt = findViewById(R.id.from_card_transfer);
-        to_card_edt = findViewById(R.id.to_card_transfer);
-        amount_edt = findViewById(R.id.amount_transfer);
-        password_edt = findViewById(R.id.password_transfer);
+        String card_number = getIntent().getStringExtra("card_num");
+        String from_date = getIntent().getStringExtra("from_date");
+        String to_date = getIntent().getStringExtra("to_date");
 
-        String from_card = from_card_edt.getText().toString().trim();
-        String to_card = to_card_edt.getText().toString().trim();
-        String password = password_edt.getText().toString().trim();
-        String amount = amount_edt.getText().toString().trim();
-
-        submit_transfer.setOnClickListener(v -> {
-        });
+        account_turnover_list_view = findViewById(R.id.account_turnover_list_view);
+        accountAdapter = new AccountAdapter(this, card_number, from_date, to_date);
+        account_turnover_list_view.setAdapter(accountAdapter);
     }
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

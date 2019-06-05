@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/pink_background"
-    tools:context=".CardToCard.CardToCardActivity">
+    tools:context=".AccountTurnover.AccountTurnoverEntry">
 
     <android.support.v7.widget.CardView
         android:layout_width="70dp"
@@ -22,7 +22,7 @@
             android:background="@drawable/pink_wood">
 
             <TextView
-                android:id="@+id/timer"
+                android:id="@+id/timer_turnover"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
@@ -33,6 +33,7 @@
                 android:textStyle="bold" />
         </RelativeLayout>
     </android.support.v7.widget.CardView>
+
 
     <LinearLayout
         android:id="@+id/transfer"
@@ -45,39 +46,20 @@
         android:weightSum="4">
 
         <EditText
-            android:id="@+id/from_card_transfer"
+            android:id="@+id/card_num_turnover"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:fontFamily="cursive"
-            android:hint="From Card"
+            android:hint="Card Number"
             android:inputType="number"
             android:paddingLeft="5dp" />
 
         <EditText
-            android:id="@+id/to_card_transfer"
+            android:id="@+id/password_turnover"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:fontFamily="cursive"
-            android:hint="To Card"
-            android:inputType="number"
-            android:paddingLeft="5dp" />
-
-        <EditText
-            android:id="@+id/amount_transfer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:fontFamily="cursive"
-            android:hint="Amount"
-            android:inputType="number"
-            android:paddingLeft="5dp" />
-
-        <EditText
-            android:id="@+id/password_transfer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:fontFamily="cursive"
             android:hint="Credit Card Password"
             android:inputType="number"
@@ -85,12 +67,13 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/submit_transfer"
+        android:id="@+id/submit_turnover"
         android:layout_width="70dp"
         android:layout_height="35dp"
         android:layout_below="@id/transfer"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="75dp"
         android:background="@drawable/first_selector"
         android:text="Next" />
+
 </RelativeLayout>
