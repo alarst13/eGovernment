@@ -11,6 +11,9 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
 
+import com.example.egovernment.AccountTurnover.AccountTurnover;
+import com.example.egovernment.AccountTurnover.AccountTurnoverEntry;
+import com.example.egovernment.CardToCard.CardToCardActivity;
 import com.example.egovernment.ColorsGame.ColorsGameActivity;
 import com.example.egovernment.Library.LibraryActivity;
 import com.example.egovernment.News.NewsActivity;
@@ -18,7 +21,7 @@ import com.example.egovernment.QuizOfKings.QuizOfKingsActivity;
 
 public class ThirdActivity extends AppCompatActivity {
 
-    ImageButton colorsGame, library, news, card_to_card, age_detection, quizOfKing;
+    ImageButton colorsGame, library, news, card_to_card, age_detection, quizOfKing, account_turnover;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,6 +79,10 @@ public class ThirdActivity extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(ThirdActivity.this, AgeDetectionActivity.class));
             }
+        });
+        account_turnover = findViewById(R.id.fab3);
+        account_turnover.setOnClickListener(v -> {
+            startActivity(new Intent(ThirdActivity.this, AccountTurnoverEntry.class));
         });
     }
 }
