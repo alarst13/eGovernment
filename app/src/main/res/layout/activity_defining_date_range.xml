@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/pink_background"
+    tools:context=".AccountTurnover.DefiningDateRange">
+
+    <LinearLayout
+        android:id="@+id/date_range_layout"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/from_date_edt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="false"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="cursive"
+            android:hint="From"
+            android:paddingLeft="5dp" />
+
+        <EditText
+            android:id="@+id/to_date_edt"
+            android:focusable="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="cursive"
+            android:layout_marginTop="10dp"
+            android:hint="To"
+            android:paddingLeft="5dp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/submit_date_range"
+        android:layout_width="75dp"
+        android:layout_height="35dp"
+        android:layout_below="@id/date_range_layout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="75dp"
+        android:background="@drawable/first_selector"
+        android:text="Next" />
+</RelativeLayout>
