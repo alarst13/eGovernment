@@ -15,13 +15,16 @@ import com.example.egovernment.AccountTurnover.AccountTurnover;
 import com.example.egovernment.AccountTurnover.AccountTurnoverEntry;
 import com.example.egovernment.CardToCard.CardToCardActivity;
 import com.example.egovernment.ColorsGame.ColorsGameActivity;
+import com.example.egovernment.Dictionary.DictionaryActivity;
 import com.example.egovernment.Library.LibraryActivity;
 import com.example.egovernment.News.NewsActivity;
 import com.example.egovernment.QuizOfKings.QuizOfKingsActivity;
+import com.example.egovernment.TextGram.TextGram;
+import com.example.egovernment.TextGram.TextGramActivity;
 
 public class ThirdActivity extends AppCompatActivity {
 
-    ImageButton colorsGame, library, news, card_to_card, age_detection, quizOfKing, account_turnover;
+    ImageButton colorsGame, library, news, card_to_card, age_detection, quizOfKing, account_turnover , telegram , accelerometer ,dictionary;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,6 +86,35 @@ public class ThirdActivity extends AppCompatActivity {
         account_turnover = findViewById(R.id.fab3);
         account_turnover.setOnClickListener(v -> {
             startActivity(new Intent(ThirdActivity.this, AccountTurnoverEntry.class));
+        });
+
+        telegram = findViewById(R.id.main_telegram);
+        telegram.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TextGram.thisPhone = "09129567534";
+                startActivity(new Intent(ThirdActivity.this , TextGramActivity.class));
+            }
+        });
+
+        accelerometer = findViewById(R.id.fab12);
+        accelerometer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    startActivity(new Intent(ThirdActivity.this, AccelerometerActivity.class));
+                }catch (Exception e){
+                    Message.message(getApplicationContext() , e.getMessage());
+                }
+            }
+        });
+
+        dictionary = findViewById(R.id.main_dictionary);
+        dictionary.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ThirdActivity.this , DictionaryActivity.class));
+            }
         });
     }
 }

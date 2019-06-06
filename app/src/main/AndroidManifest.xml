@@ -10,6 +10,13 @@
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
+    <uses-feature
+        android:name="android.hardware.sensor.proximity"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.sensor.gyroscope"
+        android:required="true" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -17,7 +24,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AccountTurnover.DefiningDateRange"></activity>
+        <activity android:name=".TextGram.TextGramMActivity"></activity>
+        <activity
+            android:name=".TextGram.TextGramActivity"
+            android:label="@string/title_activity_text_gram"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".AccountTurnover.DefiningDateRange" />
         <activity android:name=".AccountTurnover.AccountTurnoverEntry" />
         <activity android:name=".AccountTurnover.AccountTurnover" />
         <activity android:name=".CardToCard.GoToTheMainPageActivity" />
@@ -32,6 +44,7 @@
         <activity android:name=".SecondActivity" />
         <activity android:name=".Library.LibraryActivity" />
         <activity android:name=".ThirdActivity" />
+        <activity android:name=".AccelerometerActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
