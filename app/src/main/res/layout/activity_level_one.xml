@@ -4,19 +4,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ColorsGame.LevelOneActivity">
+    tools:context=".ColorsGame.LevelOneActivity"
+    android:background="@drawable/pink_background">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:weightSum="10">
 
         <TextView
             android:id="@+id/color_game_one_point"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="your point"
-            tools:ignore="MissingConstraints" />
+            tools:ignore="MissingConstraints"
+            android:layout_weight="1"
+            android:textSize="30dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -24,40 +28,44 @@
             android:weightSum="3"
             tools:ignore="MissingConstraints"
             android:layout_marginTop="5dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_weight="1">
 
             <Button
                 android:id="@+id/color_game_one_1"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:background="#000000"
                 android:clickable="true"
                 android:onClick="game"
                 android:tag="1"
                 tools:ignore="OnClick"
                 android:layout_marginRight="5dp"
+                android:layout_weight="1"
                 />
 
             <Button
                 android:id="@+id/color_game_one_2"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:background="#000000"
                 android:clickable="true"
                 android:onClick="game"
                 android:tag="2"
                 tools:ignore="OnClick"
-                android:layout_marginRight="5dp"/>
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"/>
 
             <Button
                 android:id="@+id/color_game_one_3"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:background="#000000"
                 android:clickable="true"
                 android:onClick="game"
                 android:tag="3"
-                tools:ignore="OnClick" />
+                tools:ignore="OnClick"
+                android:layout_weight="1"/>
         </LinearLayout>
 
         <LinearLayout
@@ -65,39 +73,45 @@
             android:layout_height="wrap_content"
             android:weightSum="3"
             tools:ignore="MissingConstraints"
-            android:layout_marginTop="5dp">
+            android:layout_marginTop="5dp"
+            android:layout_weight="1">
 
             <Button
                 android:id="@+id/color_game_one_4"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:background="#000000"
                 android:clickable="true"
                 android:onClick="game"
                 android:tag="4"
                 tools:ignore="OnClick"
-                android:layout_marginRight="5dp"/>
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"/>
 
             <Button
                 android:id="@+id/color_game_one_5"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:background="#000000"
                 android:clickable="true"
                 android:onClick="game"
                 android:tag="5"
                 tools:ignore="OnClick"
-                android:layout_marginRight="5dp"/>
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                />
 
             <Button
                 android:id="@+id/color_game_one_6"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:background="#000000"
                 android:clickable="true"
                 android:onClick="game"
                 android:tag="6"
-                tools:ignore="OnClick" />
+                tools:ignore="OnClick"
+                android:layout_weight="1"
+                />
         </LinearLayout>
 
         <LinearLayout
@@ -105,39 +119,46 @@
             android:layout_height="wrap_content"
             android:weightSum="3"
             tools:ignore="MissingConstraints"
-            android:layout_marginTop="5dp">
+            android:layout_marginTop="5dp"
+            android:layout_weight="1">
 
             <Button
                 android:id="@+id/color_game_one_7"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:background="#000000"
                 android:clickable="true"
                 android:onClick="game"
                 android:tag="7"
                 tools:ignore="OnClick"
-                android:layout_marginRight="5dp"/>
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                />
 
             <Button
                 android:id="@+id/color_game_one_8"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:background="#000000"
                 android:clickable="true"
                 android:onClick="game"
                 android:tag="8"
                 tools:ignore="OnClick"
-                android:layout_marginRight="5dp"/>
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                />
 
             <Button
                 android:id="@+id/color_game_one_9"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:background="#000000"
                 android:clickable="true"
                 android:onClick="game"
                 android:tag="9"
-                tools:ignore="DuplicateIds,OnClick" />
+                tools:ignore="DuplicateIds,OnClick"
+                android:layout_weight="1"
+                />
         </LinearLayout>
         <Button
             android:id="@+id/color_game_one_start"
@@ -145,7 +166,8 @@
             android:layout_height="wrap_content"
             android:text="start"
             android:background="#858585"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"/>
     </LinearLayout>
 
 </RelativeLayout>

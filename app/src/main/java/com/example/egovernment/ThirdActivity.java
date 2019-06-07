@@ -5,25 +5,27 @@ import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
 
-import com.example.egovernment.AccountTurnover.AccountTurnover;
 import com.example.egovernment.AccountTurnover.AccountTurnoverEntry;
 import com.example.egovernment.CardToCard.CardToCardActivity;
 import com.example.egovernment.ColorsGame.ColorsGameActivity;
+import com.example.egovernment.Dictionary.DictionaryActivity;
 import com.example.egovernment.Library.LibraryActivity;
 import com.example.egovernment.News.NewsActivity;
 import com.example.egovernment.PDFConverter.SelectingImage;
 import com.example.egovernment.QuizOfKings.QuizOfKingsActivity;
+import com.example.egovernment.TextGram.TextGram;
+import com.example.egovernment.TextGram.TextGramActivity;
 
 public class ThirdActivity extends AppCompatActivity {
 
-    ImageButton colorsGame, library, news, card_to_card, age_detection, quizOfKing, account_turnover, pdf_converter;
+    ImageButton colorsGame, library, news, card_to_card, age_detection, quizOfKing, account_turnover, pdf_converter, telegram , accelerometer ,dictionary;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -90,6 +92,35 @@ public class ThirdActivity extends AppCompatActivity {
         pdf_converter = findViewById(R.id.fab9);
         pdf_converter.setOnClickListener(v -> {
             startActivity(new Intent(ThirdActivity.this, SelectingImage.class));
+        });
+
+        telegram = findViewById(R.id.main_telegram);
+        telegram.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TextGram.thisPhone = "09129567534";
+                startActivity(new Intent(ThirdActivity.this , TextGramActivity.class));
+            }
+        });
+
+        accelerometer = findViewById(R.id.fab12);
+        accelerometer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    startActivity(new Intent(ThirdActivity.this, AccelerometerActivity.class));
+                }catch (Exception e){
+                    Message.message(getApplicationContext() , e.getMessage());
+                }
+            }
+        });
+
+        dictionary = findViewById(R.id.main_dictionary);
+        dictionary.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ThirdActivity.this , DictionaryActivity.class));
+            }
         });
     }
 }

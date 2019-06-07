@@ -104,7 +104,7 @@
                 android:weightSum="2">
 
                 <ImageButton
-                    android:id="@+id/fab4"
+                    android:id="@+id/main_telegram"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_margin="10dp"
@@ -127,7 +127,7 @@
                 android:weightSum="2">
 
                 <ImageButton
-                    android:id="@+id/fab5"
+                    android:id="@+id/main_dictionary"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_margin="10dp"

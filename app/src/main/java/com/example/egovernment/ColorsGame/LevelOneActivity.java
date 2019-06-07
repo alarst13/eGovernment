@@ -1,6 +1,7 @@
 package com.example.egovernment.ColorsGame;
 
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -25,6 +26,10 @@ public class LevelOneActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level_one);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#ffb2b2")));
+        getSupportActionBar().setTitle("colors game");
+
         buttons[0] = findViewById(R.id.color_game_one_1);
         buttons[1] = findViewById(R.id.color_game_one_2);
         buttons[2] = findViewById(R.id.color_game_one_3);
@@ -150,5 +155,6 @@ public class LevelOneActivity extends AppCompatActivity {
                 }
                 break;
         }
+        pointView.setText("your point : " + point);
     }
 }
