@@ -10,15 +10,11 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.MenuItem;
-import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.AdapterView;
 
 import com.example.egovernment.DatabaseAccess;
-import com.example.egovernment.DatabaseHelper;
 import com.example.egovernment.R;
-import com.example.egovernment.model.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -76,7 +72,7 @@ public class LibraryActivity extends AppCompatActivity {
     }
     private void initRecyclerView(){
         Log.d(TAG, "initRecyclerView: init recyclerview.");
-        RecyclerView recyclerView = findViewById(R.id.recyclerv_view);
+        RecyclerView recyclerView = findViewById(R.id.recycler_view);
         LibraryRecyclerViewAdapter adapter = new LibraryRecyclerViewAdapter(this, mNames, mImageUrls);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

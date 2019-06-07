@@ -16,7 +16,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AccountAdapter extends BaseAdapter {
-
     String card_number;
     String from_date;
     String to_date;

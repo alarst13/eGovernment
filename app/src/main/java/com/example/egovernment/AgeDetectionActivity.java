@@ -2,6 +2,7 @@ package com.example.egovernment;
 
 import android.Manifest;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Color;
@@ -39,7 +40,7 @@ public class AgeDetectionActivity extends AppCompatActivity implements View.OnCl
     public static final String API_KEY = "e3448870-32d6-4e4b-a7b3-4d561f1c00bf";
 
     TextView age_txt;
-    ImageView select_from_gallery;
+    ImageView take_photo, set_photo;
     Button process;
     private static final int REQUEST_CAPTURE_IMAGE = 100;
     private final int REQUEST_CODE = 1;
@@ -50,6 +51,7 @@ public class AgeDetectionActivity extends AppCompatActivity implements View.OnCl
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_age_detection);
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#ffb2b2")));
@@ -77,8 +79,9 @@ public class AgeDetectionActivity extends AppCompatActivity implements View.OnCl
 
         age_txt = findViewById(R.id.age_txt);
 
-        select_from_gallery = findViewById(R.id.image_from_gallery);
-        select_from_gallery.setOnClickListener(this);
+        set_photo = findViewById(R.id.set_saved_photo);
+        take_photo = findViewById(R.id.take_photo);
+        take_photo.setOnClickListener(this);
 
         process = findViewById(R.id.btn_process);
         process.setOnClickListener(new View.OnClickListener() {
@@ -91,7 +94,7 @@ public class AgeDetectionActivity extends AppCompatActivity implements View.OnCl
 
     @Override
     public void onClick(View v) {
-        if (v.getId() == R.id.image_from_gallery) {
+        if (v.getId() == R.id.take_photo) {
             dispatchTakePictureIntent();
             sendImage();
         }
@@ -122,7 +125,7 @@ public class AgeDetectionActivity extends AppCompatActivity implements View.OnCl
             Bundle extras = data.getExtras();
             Bitmap imageBitmap = (Bitmap) extras.get("data");
             saveImage(imageBitmap, imagePath);
-            select_from_gallery.setImageBitmap(imageBitmap);
+            set_photo.setImageBitmap(imageBitmap);
         }
     }
 

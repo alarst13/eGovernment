@@ -1,6 +1,7 @@
 package com.example.egovernment;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
@@ -17,15 +18,17 @@ import com.example.egovernment.CardToCard.CardToCardActivity;
 import com.example.egovernment.ColorsGame.ColorsGameActivity;
 import com.example.egovernment.Library.LibraryActivity;
 import com.example.egovernment.News.NewsActivity;
+import com.example.egovernment.PDFConverter.SelectingImage;
 import com.example.egovernment.QuizOfKings.QuizOfKingsActivity;
 
 public class ThirdActivity extends AppCompatActivity {
 
-    ImageButton colorsGame, library, news, card_to_card, age_detection, quizOfKing, account_turnover;
+    ImageButton colorsGame, library, news, card_to_card, age_detection, quizOfKing, account_turnover, pdf_converter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_third);
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#ffb2b2")));
         getSupportActionBar().setTitle(PreferenceData.getLoggedInPhoneNumberUser(this));
@@ -83,6 +86,10 @@ public class ThirdActivity extends AppCompatActivity {
         account_turnover = findViewById(R.id.fab3);
         account_turnover.setOnClickListener(v -> {
             startActivity(new Intent(ThirdActivity.this, AccountTurnoverEntry.class));
+        });
+        pdf_converter = findViewById(R.id.fab9);
+        pdf_converter.setOnClickListener(v -> {
+            startActivity(new Intent(ThirdActivity.this, SelectingImage.class));
         });
     }
 }
