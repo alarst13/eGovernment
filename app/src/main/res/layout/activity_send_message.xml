@@ -35,4 +35,5 @@
         android:layout_toRightOf="@id/edt_sending"
         android:layout_alignParentBottom="true"/>
 
+
 </RelativeLayout>
