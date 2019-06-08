@@ -97,7 +97,6 @@ public class NewsLinkList {
         NewsLinkList.phoneNumber = phone;
         mkHistory();
         findFriend();
-        newsForShow =
         return null;
     }
 }
