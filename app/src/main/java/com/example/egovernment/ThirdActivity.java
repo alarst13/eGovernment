@@ -17,7 +17,6 @@ import com.example.egovernment.CardToCard.CardToCardActivity;
 import com.example.egovernment.ColorsGame.ColorsGameActivity;
 import com.example.egovernment.Dictionary.DictionaryActivity;
 import com.example.egovernment.Library.LibraryActivity;
-import com.example.egovernment.News.NewsActivity;
 import com.example.egovernment.PDFConverter.SelectingImage;
 import com.example.egovernment.QuizOfKings.QuizOfKingsActivity;
 import com.example.egovernment.TextGram.TextGram;
@@ -53,7 +52,7 @@ public class ThirdActivity extends AppCompatActivity {
         news.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ThirdActivity.this , NewsActivity.class));
+                //startActivity(new Intent(ThirdActivity.this , NewsActivity.class));
             }
         });
         library = findViewById(R.id.fab1);
