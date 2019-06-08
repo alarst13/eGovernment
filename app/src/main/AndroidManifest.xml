@@ -25,9 +25,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".QuizOfKings.StartOverOrFinish"></activity>
         <activity android:name=".PDFConverter.SelectingImage" />
         <activity android:name=".AccountTurnover.DefiningDateRange" />
-        <activity android:name=".TextGram.TextGramMActivity"></activity>
+        <activity android:name=".TextGram.TextGramMActivity" />
         <activity
             android:name=".TextGram.TextGramActivity"
             android:label="@string/title_activity_text_gram"
@@ -38,7 +39,6 @@
         <activity android:name=".CardToCard.EnsuringActivity" />
         <activity android:name=".CardToCard.CardToCardActivity" />
         <activity android:name=".AgeDetectionActivity" />
-        <activity android:name=".News.NewsActivity" />
         <activity android:name=".ColorsGame.LevelOneActivity" />
         <activity android:name=".ColorsGame.ColorsGameActivity" />
         <activity android:name=".Dictionary.DictionaryActivity" />

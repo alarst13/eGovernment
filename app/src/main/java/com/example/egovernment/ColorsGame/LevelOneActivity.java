@@ -2,9 +2,14 @@ package com.example.egovernment.ColorsGame;
 
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.GradientDrawable;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -28,7 +33,14 @@ public class LevelOneActivity extends AppCompatActivity {
         setContentView(R.layout.activity_level_one);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#ffb2b2")));
-        getSupportActionBar().setTitle("colors game");
+        getSupportActionBar().setTitle("Colors Game");
+
+        if (Build.VERSION.SDK_INT >= 21) {
+            Window window = this.getWindow();
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            window.setStatusBarColor(this.getResources().getColor(R.color.red));
+        }
 
         buttons[0] = findViewById(R.id.color_game_one_1);
         buttons[1] = findViewById(R.id.color_game_one_2);
@@ -61,14 +73,24 @@ public class LevelOneActivity extends AppCompatActivity {
         blue = random.nextInt(200);
         green = random.nextInt(200);
         int color = Color.rgb(red , green , blue);
-        for (Button i:buttons) {
-            i.setBackgroundColor(color);
+        for (Button i : buttons) {
+            GradientDrawable shape = new GradientDrawable();
+            shape.setShape(GradientDrawable.RECTANGLE);
+            shape.setColor(color);
+            shape.setStroke(4, Color.WHITE);
+            shape.setCornerRadius(8);
+            i.setBackgroundDrawable(shape);
         }
         color = Color.rgb(red + 20, green + 20 , blue + 20);
         int g = random.nextInt(9);
         b[g] = true;
-        buttons[g].setBackgroundColor(color);
-        pointView.setText("your point : " + point);
+        GradientDrawable shape = new GradientDrawable();
+        shape.setShape(GradientDrawable.RECTANGLE);
+        shape.setColor(color);
+        shape.setStroke(4, Color.WHITE);
+        shape.setCornerRadius(8);
+        buttons[g].setBackgroundDrawable(shape);
+        pointView.setText("Your Point is " + point);
     }
 
     public void game(View view) {
@@ -78,7 +100,7 @@ public class LevelOneActivity extends AppCompatActivity {
                     setColor();
                     point++;
                 } else {
-                    Message.message(getApplicationContext(), "your point : " + point);
+                    Message.message(getApplicationContext(), "Your Point is " + point);
                     finish();
                 }
                 break;
@@ -87,7 +109,7 @@ public class LevelOneActivity extends AppCompatActivity {
                     setColor();
                     point++;
                 } else {
-                    Message.message(getApplicationContext(), "your point : " + point);
+                    Message.message(getApplicationContext(), "Your Point is " + point);
                     finish();
                 }
                 break;
@@ -96,7 +118,7 @@ public class LevelOneActivity extends AppCompatActivity {
                     setColor();
                     point++;
                 } else {
-                    Message.message(getApplicationContext(), "your point : " + point);
+                    Message.message(getApplicationContext(), "Your Point is " + point);
                     finish();
                 }
                 break;
@@ -105,7 +127,7 @@ public class LevelOneActivity extends AppCompatActivity {
                     setColor();
                     point++;
                 } else {
-                    Message.message(getApplicationContext(), "your point : " + point);
+                    Message.message(getApplicationContext(), "Your Point is " + point);
                     finish();
                 }
                 break;
@@ -114,7 +136,7 @@ public class LevelOneActivity extends AppCompatActivity {
                     setColor();
                     point++;
                 } else {
-                    Message.message(getApplicationContext(), "your point : " + point);
+                    Message.message(getApplicationContext(), "Your Point is " + point);
                     finish();
                 }
                 break;
@@ -123,7 +145,7 @@ public class LevelOneActivity extends AppCompatActivity {
                     setColor();
                     point++;
                 } else {
-                    Message.message(getApplicationContext(), "your point : " + point);
+                    Message.message(getApplicationContext(), "Your Point is " + point);
                     finish();
                 }
                 break;
@@ -132,7 +154,7 @@ public class LevelOneActivity extends AppCompatActivity {
                     setColor();
                     point++;
                 } else {
-                    Message.message(getApplicationContext(), "your point : " + point);
+                    Message.message(getApplicationContext(), "Your Point is " + point);
                     finish();
                 }
                 break;
@@ -141,7 +163,7 @@ public class LevelOneActivity extends AppCompatActivity {
                     setColor();
                     point++;
                 } else {
-                    Message.message(getApplicationContext(), "your point : " + point);
+                    Message.message(getApplicationContext(), "Your Point is " + point);
                     finish();
                 }
                 break;
@@ -150,11 +172,20 @@ public class LevelOneActivity extends AppCompatActivity {
                     setColor();
                     point++;
                 } else {
-                    Message.message(getApplicationContext(), "your point : " + point);
+                    Message.message(getApplicationContext(), "Your Point is " + point);
                     finish();
                 }
                 break;
         }
-        pointView.setText("your point : " + point);
+        pointView.setText("Your Point is " + point);
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

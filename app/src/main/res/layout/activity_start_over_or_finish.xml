@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/pink_wood"
+    tools:context=".QuizOfKings.StartOverOrFinish">
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="15dp"
+        android:fontFamily="casual"
+        android:gravity="left"
+        android:text="Congrats, you correctly answered all the questions ..."
+        android:textColor="#ffff"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:weightSum="3">
+
+        <Button
+            android:id="@+id/start_over"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/first_selector"
+            android:fontFamily="casual"
+            android:text="Start Over"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:fontFamily="cursive"
+            android:text="OR"
+            android:textColor="#ffff"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/exit"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/first_selector"
+            android:fontFamily="casual"
+            android:text="Exit"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/wink"
+        />
+
+</RelativeLayout>
