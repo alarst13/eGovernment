@@ -92,11 +92,24 @@ public class NewsLinkList {
         return false;
     }
 
+    public static boolean set(News news){
+
+        return !myNews.contains(news);
+    }
+
     public static LinkedList<News> mkShowList(Context context , String phone){
         mkNews(context);
         NewsLinkList.phoneNumber = phone;
         mkHistory();
         findFriend();
-        return null;
+        newsForShow = new LinkedList<>();
+
+        for (News n : news){
+            if (set(n)){
+                newsForShow.addLast(n);
+            }
+        }
+
+        return newsForShow;
     }
 }

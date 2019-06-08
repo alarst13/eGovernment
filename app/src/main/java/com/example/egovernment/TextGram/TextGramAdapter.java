@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.example.egovernment.News.News;
 import com.example.egovernment.R;
 
 import java.util.LinkedList;

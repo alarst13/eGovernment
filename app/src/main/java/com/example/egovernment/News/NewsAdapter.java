@@ -1,5 +1,7 @@
 package com.example.egovernment.News;
 
+import android.content.Context;
+import android.database.DataSetObserver;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -7,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ListAdapter;
 import android.widget.TextView;
 
 import com.example.egovernment.R;
@@ -41,7 +44,6 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
     public int getItemCount() {
         return news.size();
     }
-
     public  static class NewsViewHolder extends RecyclerView.ViewHolder{
 
         public TextView title;
