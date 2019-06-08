@@ -98,7 +98,7 @@ public class ThirdActivity extends AppCompatActivity {
         telegram.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TextGram.thisPhone = "09129567534";
+                TextGram.thisPhone = PreferenceData.getLoggedInPhoneNumberUser(getApplicationContext());
                 startActivity(new Intent(ThirdActivity.this , TextGramActivity.class));
             }
         });

@@ -32,7 +32,11 @@ public class TextGramActivity extends AppCompatActivity {
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#ffb2b2")));
         getSupportActionBar().setTitle(TextGram.thisPhone);
 
-        TextGram.getFromDB();
+        if(TextGram.thisPhone == null){
+            finish();
+        }
+
+        TextGram.getFromDB(this);
         TextGram.mkTextGramActivityList();
         listView = findViewById(R.id.text_gram_list);
         textGramAdapter = new TextGramAdapter(this , TextGram.textGramActivityList , TextGram.thisPhone);
@@ -57,9 +61,6 @@ public class TextGramActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-
             }
         });
     }
