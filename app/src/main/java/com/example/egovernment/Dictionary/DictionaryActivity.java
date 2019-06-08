@@ -18,7 +18,7 @@ public class DictionaryActivity extends AppCompatActivity {
     ListView list;
     TextView textView;
 
-    Dictionary dictionary = new Dictionary();
+    Dictionary dictionary;
     DictionaryAdapter dictionaryAdapter;
 
     @Override
@@ -31,6 +31,8 @@ public class DictionaryActivity extends AppCompatActivity {
         list = findViewById(R.id.dictionary_list);
         textView = findViewById(R.id.dictionary_text);
 
+        dictionary = new Dictionary(this);
+
         dictionaryAdapter = new DictionaryAdapter(dictionary.wordsForShow , getApplicationContext());
         list.setAdapter(dictionaryAdapter);
 
@@ -42,10 +44,10 @@ public class DictionaryActivity extends AppCompatActivity {
                     textView.setText(null);
                 }
                 else if (dictionary.wordsForShow.size() == 0){
-                    textView.setText("not find any words.");
+                    textView.setText("The word not is found");
                 }
                 else {
-                    textView.setText("word look like your search.");
+                    textView.setText("You might be looking for this word?");
                 }
                 dictionaryAdapter.notifyDataSetChanged();
 

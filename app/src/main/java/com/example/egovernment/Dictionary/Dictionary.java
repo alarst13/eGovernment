@@ -1,19 +1,28 @@
 package com.example.egovernment.Dictionary;
 
+import android.content.Context;
+import android.database.Cursor;
+
+import com.example.egovernment.DatabaseAccess;
+
 import java.util.LinkedList;
 
 public class Dictionary {
     LinkedList <Word> words = new LinkedList<>();
     LinkedList <Word> wordsForShow = new LinkedList<>();
 
-    public Dictionary() {
-        //get from data base
-        words.addLast(new Word("سیب" , "apple"));
-        words.addLast(new Word("ایران" , "iran"));
-        words.addLast(new Word("کتاب" , "book"));
-        words.addLast(new Word("فلسفه" , "philosophy"));
-        words.addLast(new Word("منطق" ,"logic"));
-        words.addLast(new Word("ریاضی" , "mathematical"));
+    public Dictionary(Context context) {
+        DatabaseAccess databaseAccess = new DatabaseAccess(context);
+        Cursor c = databaseAccess.getDb().rawQuery("SELECT * FROM Dictionary",null);
+        c.moveToFirst();
+        while(!c.isAfterLast()){
+            String persian = c.getString(0);
+            String english = c.getString(1);
+            Word word = new Word(persian, english);
+            words.addLast(new Word(persian , english));
+            c.moveToNext();
+        }
+
     }
 
     public boolean search(String string){

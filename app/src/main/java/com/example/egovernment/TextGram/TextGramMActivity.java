@@ -4,13 +4,10 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
 
-import com.example.egovernment.Message;
 import com.example.egovernment.R;
 
 public class TextGramMActivity extends AppCompatActivity {
@@ -31,7 +28,7 @@ public class TextGramMActivity extends AppCompatActivity {
 
         TextGram.mktextGramMAList();
 
-        textGramMessageAdapter = new TextGramMessageAdapter(this , TextGram.textGramMAList , TextGram.thisPhone);
+        textGramMessageAdapter = new TextGramMessageAdapter(this , TextGram.textGramList, TextGram.thisPhone);
         listView.setAdapter(textGramMessageAdapter);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -39,7 +36,7 @@ public class TextGramMActivity extends AppCompatActivity {
         getSupportActionBar().setTitle(TextGram.thatPhone);
 
         send.setOnClickListener(v -> {
-            TextGram.mkMessage(TextGram.thatPhone , editText.getText().toString());
+            TextGram.mkMessage(getApplicationContext(), TextGram.thatPhone , editText.getText().toString());
             textGramMessageAdapter.notifyDataSetChanged();
             editText.setText("");
         });
